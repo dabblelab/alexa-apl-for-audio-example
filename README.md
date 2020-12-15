@@ -2,10 +2,10 @@
 
 This template is built on top of Node.js SDK. It's pretty simple, as on this demo i have demonstrated the Audio functionality in APL that uses Mixer, with filters. To use this -
 
-##### Step 1  
+#### Step 1  
 Navigate to your [Amazon Alexa Developer Console](https://developer.amazon.com/alexa/console/ask) .
 
-##### Step 2 
+#### Step 2 
 Click on New Skill
 
 #### Step 3 
