@@ -25,6 +25,6 @@ Once, this is done, you've successfully covered all the steps to test this templ
 
 NOTE: I have some formatted audio files in the Assets Folder, you may use them for your reference/testing.
 
-These were the basic steps to help you with the skill. If you wish to further use this for building a skill, you can manipulate the template accordingly. Further to this, if you have any questions, reach out to me at - sohini@dabblelab.com
+These were the basic steps to help you with the skill. If you wish to further use this for building a skill, you can manipulate the template accordingly. Further to this, if you have any questions, reach out to me at - sohini@dabblelab.com or on [Twitter](https://twitter.com/TheSohini)
 
 Thanks!
