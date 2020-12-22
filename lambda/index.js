@@ -9,8 +9,8 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-      const bg = Util.getS3PreSignedUrl("Media/Intro+Theme+Music+06+(Version+2)+20+Seconds.mp3").replace(/&/g,'&amp;');
-      const quote = Util.getS3PreSignedUrl("Media/Quote+1.mp3").replace(/&/g,'&amp;');
+      const backgroundAudio = Util.getS3PreSignedUrl("Media/your-background-music.mp3").replace(/&/g,'&amp;');
+      const voice = Util.getS3PreSignedUrl("Media/voice-or-speech.mp3").replace(/&/g,'&amp;');
        if(supportsAPL(handlerInput))
         {
          {
@@ -36,11 +36,11 @@ const LaunchRequestHandler = {
             "items": [
             {
                 "type": "Audio",
-                "source": `${quote}`,
+                "source": `${voice}`,
             },
             {
                 "type": "Audio",
-                "source": `${bg}`,
+                "source": `${backgroundAudio}`,
                 "filters": [
                 {
                     "type": "Volume",
