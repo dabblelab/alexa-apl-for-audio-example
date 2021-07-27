@@ -1,76 +1,56 @@
 /* eslint-disable  func-names */
 /* eslint-disable  no-console */
-const main = require('./main.json');
+
 const Alexa = require('ask-sdk-core');
-const Util = require('./util.js');
+const audioDocument = require('./audio.json');
+const util = require('./util.js')
 
+const AUDIO_TOKEN = "AudioToken";
+const music = util.getS3PreSignedUrl("Media/detour(yt-music).mp3").replace(/&/g,'&amp;')
+const gabi = util.getS3PreSignedUrl("Media/Gabi.mp3").replace(/&/g,'&amp;')
 const LaunchRequestHandler = {
-  canHandle(handlerInput) {
-    return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
-  },
-  handle(handlerInput) {
-      const backgroundAudio = Util.getS3PreSignedUrl("Media/your-background-music.mp3").replace(/&/g,'&amp;');
-      const voice = Util.getS3PreSignedUrl("Media/voice-or-speech.mp3").replace(/&/g,'&amp;');
-       if(supportsAPL(handlerInput))
-        {
-         {
-             handlerInput.responseBuilder
-                .addDirective({
-                    "type": "Alexa.Presentation.APL.RenderDocument",
-                    "token": "token",
-                    "document": main,   
-                    "datasources":{}
-                })
-         }
-         return handlerInput.responseBuilder
-      .speak("This is a demo explaining APL for Audio by Dabble Lab")
-      .addDirective({
-        "type": "Alexa.Presentation.APLA.RenderDocument",
-        "token": "developer-provided-string",
-        "document": {
-            "version": "0.9",
-            "type": "APLA",
-            "mainTemplate": {
-                "item": {
-                "type": "Mixer",
-            "items": [
-            {
-                "type": "Audio",
-                "source": `${voice}`,
-            },
-            {
-                "type": "Audio",
-                "source": `${backgroundAudio}`,
-                "filters": [
-                {
-                    "type": "Volume",
-                    "amount": "20%"
-                }
-            ]
-        }
-    ]
-          
-      }
+    canHandle(handlerInput){
+        
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
+    },
+    handle(handlerInput){
+        let responseBuilder = handlerInput.responseBuilder
+        if (Alexa.getSupportedInterfaces(handlerInput.requestEnvelope)['Alexa.Presentation.APL']){
+            
+            // Add the RenderDocument directive to the responseBuilder
+            responseBuilder.addDirective({
+                type: "Alexa.Presentation.APLA.RenderDocument",
+                token: AUDIO_TOKEN,
+                document: audioDocument,
+                datasources: {
+                    "user": { "name": "Sohini"},
+                    "source": music,
+                    "gabi": gabi
+                    }
+                });
+            }
+        const speakOutput = "Welcome to Alexa Presentation Language for Audio Interface!";
+        return responseBuilder
+            .speak(speakOutput)
+            .reprompt("You can say Hello or you can say goodbye!")
+            .getResponse();
     }
-  },
-  "datasources": {}
-})
-      .getResponse();
-    }
-    else
-    {
-        return handlerInput.responseBuilder.withSimpleCard().speak("APLA is not supported").getResponse();
-    }
-   
-  },
-};
-
-function supportsAPL(handlerInput) {
-  const supportedInterfaces = handlerInput.requestEnvelope.context
-    .System.device.supportedInterfaces;
-  const aplInterface = supportedInterfaces['Alexa.Presentation.APL'];
-  return aplInterface !== null && aplInterface !== undefined;
 }
+
+const HelloWorldIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'HelloWorldIntent';
+    },
+    handle(handlerInput) {
+        const speakOutput = 'Hi there! ';
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
 
 const AboutIntentHandler = {
   canHandle(handlerInput) {
@@ -148,6 +128,7 @@ exports.handler = Alexa.SkillBuilders.custom()
     
   .addRequestHandlers(
     LaunchRequestHandler,
+    HelloWorldIntentHandler,
     AboutIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,

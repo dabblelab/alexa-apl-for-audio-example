@@ -35,27 +35,10 @@
         {
           "name": "AMAZON.FallbackIntent",
           "samples": []
-        },
-        {
-          "name": "AboutIntent",
-          "slots": [],
-          "samples": [
-            "tell me about this template",
-            "about this template",
-            "more about this skill",
-            "tell me about apla demo",
-            "tell me about this skill",
-            "about this skill"
-          ]
         }
       ],
-      "types": [],
-      "modelConfiguration": {
-        "fallbackIntentSensitivity": {
-          "level": "LOW"
-        }
-      }
+      "types": []
     }
   },
-  "version": "1"
+  "version": "3"
 }

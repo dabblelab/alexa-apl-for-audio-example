@@ -3,7 +3,7 @@
     "apis": {
       "custom": {
         "endpoint": {
-          "uri": "arn:aws:lambda:us-east-1:128848124248:function:cb53a36f-d361-4876-993f-fabdf656bf78:Release_0"
+          "uri": "arn:aws:lambda:us-east-1:325775800922:function:f66cf978-e6ff-4117-b789-cd755cecf99c:Release_0"
         },
         "interfaces": [
           {
@@ -17,35 +17,59 @@
                 "shape": "RECTANGLE"
               },
               {
-                "maxHeight": 480,
-                "maxWidth": 480,
-                "minHeight": 480,
-                "minWidth": 480,
+                "maxHeight": 599,
+                "maxWidth": 599,
+                "minHeight": 100,
+                "minWidth": 100,
                 "mode": "HUB",
                 "shape": "ROUND"
               },
               {
-                "maxHeight": 600,
-                "maxWidth": 1024,
+                "maxHeight": 959,
+                "maxWidth": 1279,
                 "minHeight": 600,
-                "minWidth": 1024,
+                "minWidth": 960,
                 "mode": "HUB",
                 "shape": "RECTANGLE"
               },
               {
-                "maxHeight": 800,
-                "maxWidth": 1280,
-                "minHeight": 800,
+                "maxHeight": 1279,
+                "maxWidth": 1920,
+                "minHeight": 600,
                 "minWidth": 1280,
                 "mode": "HUB",
                 "shape": "RECTANGLE"
               },
               {
-                "maxHeight": 480,
-                "maxWidth": 960,
-                "minHeight": 480,
+                "maxHeight": 599,
+                "maxWidth": 1279,
+                "minHeight": 100,
                 "minWidth": 960,
                 "mode": "HUB",
+                "shape": "RECTANGLE"
+              },
+              {
+                "maxHeight": 1920,
+                "maxWidth": 959,
+                "minHeight": 320,
+                "minWidth": 600,
+                "mode": "MOBILE",
+                "shape": "RECTANGLE"
+              },
+              {
+                "maxHeight": 1920,
+                "maxWidth": 1279,
+                "minHeight": 320,
+                "minWidth": 960,
+                "mode": "MOBILE",
+                "shape": "RECTANGLE"
+              },
+              {
+                "maxHeight": 1920,
+                "maxWidth": 1920,
+                "minHeight": 320,
+                "minWidth": 1280,
+                "mode": "MOBILE",
                 "shape": "RECTANGLE"
               }
             ],
@@ -53,19 +77,19 @@
           }
         ],
         "regions": {
-          "EU": {
-            "endpoint": {
-              "uri": "arn:aws:lambda:eu-west-1:128848124248:function:cb53a36f-d361-4876-993f-fabdf656bf78:Release_0"
-            }
-          },
           "NA": {
             "endpoint": {
-              "uri": "arn:aws:lambda:us-east-1:128848124248:function:cb53a36f-d361-4876-993f-fabdf656bf78:Release_0"
+              "uri": "arn:aws:lambda:us-east-1:325775800922:function:f66cf978-e6ff-4117-b789-cd755cecf99c:Release_0"
+            }
+          },
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:325775800922:function:f66cf978-e6ff-4117-b789-cd755cecf99c:Release_0"
             }
           },
           "FE": {
             "endpoint": {
-              "uri": "arn:aws:lambda:us-west-2:128848124248:function:cb53a36f-d361-4876-993f-fabdf656bf78:Release_0"
+              "uri": "arn:aws:lambda:us-west-2:325775800922:function:f66cf978-e6ff-4117-b789-cd755cecf99c:Release_0"
             }
           }
         }
@@ -73,6 +97,13 @@
     },
     "manifestVersion": "1.0",
     "publishingInformation": {
+      "automaticClonedLocale": {
+        "locales": [
+          {
+            "source": "en-US"
+          }
+        ]
+      },
       "category": "KNOWLEDGE_AND_TRIVIA",
       "distributionCountries": [],
       "isAvailableWorldwide": true,

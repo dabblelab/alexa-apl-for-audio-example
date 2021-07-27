@@ -37,13 +37,8 @@
           "samples": []
         }
       ],
-      "types": [],
-      "modelConfiguration": {
-        "fallbackIntentSensitivity": {
-          "level": "LOW"
-        }
-      }
+      "types": []
     }
   },
-  "version": "2"
+  "version": "1"
 }

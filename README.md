@@ -1,30 +1,33 @@
+![]()
+
 # APL for Audio Template
 
-This template is built on top of Node.js SDK. It's pretty simple, as on this demo i have demonstrated the Audio functionality in APL that uses Mixer, with filters. To use this -
+This template is built on top of Node.js SDK. It's pretty simple, as on this demo i have demonstrated the Audio functionality in APL that uses APL multi child components, with filters. 
 
-#### Step 1  
-Navigate to your [Amazon Alexa Developer Console](https://developer.amazon.com/alexa/console/ask) .
+### Using this skill template
 
-#### Step 2 
-Click on New Skill
+1. If you don't have one already, create an [Amazon Developer account](https://developer.amazon.com/).
 
-#### Step 3 
-Give your desired Skill name, for eg: Demo Audio, Choose Custom Model, Choose Node.js SDK in methods.
+2. Click the button below to deploy the code for this skill into your Alexa developer account.
 
-#### Step 4 
-Click on the "import skill" button, and copy the link to this Github Repo i.e - https://github.com/dabblelab/apla-template.git
+   <Badge_Here>
 
-#### Step 5 
-Once Validation & Model Creation is done, Your skill would be ready.
+3. In the Alexa developer console, set the skill's invocation name.
 
-#### Step 6 
-Make sure you format your audio files properly with SSML standard protocols & upload them to your s3 hosted skill bucket. If you are not sure about audio formatting, you can check this [here](https://github.com/dabblelab/dabble-alexa-with-sohini/blob/main/E03-alexa-skill-using-audio-files/Audio%20Formatting%20with%20Audacity.md) for Audacity. And using FFMPEG, you can do the same, check this out [here](https://github.com/dabblelab/dabble-alexa-with-sohini/blob/main/E03-alexa-skill-using-audio-files/Audio%20Formatting%20with%20FFMPEG.md) Try to name the audio files without spaces in them inorder to prevent errors. 
+4. Test the skill with an Alexa device that supports APL.
 
-#### Step 7 
-Once, this is done, you've successfully covered all the steps to test this template. Hence, move to the test tab, and turn your skill mode from "Off" to "Development", and give it a test! 
+   > **NOTE:** You can test the skill in devices like: Echo Show, Fire TV, some Fire tablets, and other devices.
 
-NOTE: I have some formatted audio files in the Assets Folder, you may use them for your reference/testing.
+5. Modify the skill code to use your own music/audio URL.
 
-These were the basic steps to help you with the skill. If you wish to further use this for building a skill, you can manipulate the template accordingly. Further to this, if you have any questions, reach out to me at - sohini@dabblelab.com or on [Twitter](https://twitter.com/TheSohini)
+**NOTE:**
+
+1. Make sure you format your audio files properly with SSML standard protocols & upload them to your s3 hosted skill bucket. If you are not sure about audio formatting, you can check this [here](https://github.com/dabblelab/dabble-alexa-with-sohini/blob/main/E03-alexa-skill-using-audio-files/Audio%20Formatting%20with%20Audacity.md) for Audacity. And using FFMPEG, you can do the same, check this out [here](https://github.com/dabblelab/dabble-alexa-with-sohini/blob/main/E03-alexa-skill-using-audio-files/Audio%20Formatting%20with%20FFMPEG.md) Try to name the audio files without spaces in them inorder to prevent errors. 
+2. I have some formatted audio files in the Assets Folder, you may use them for your reference/testing.
+
+UPDATE: Code Cleaned and multiple APL child audio components are added to the APL-A document.
+
+Further to this, if you have any questions, reach out to me at - [Email](mailto:sohini@dabblelab.com) or [Twitter](https://twitter.com/TheSohini)
 
 Thanks!
+
