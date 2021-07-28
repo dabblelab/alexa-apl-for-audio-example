@@ -18,7 +18,7 @@ This template is built on top of Node.js SDK. It's pretty simple, as on this dem
 
    > **NOTE:** You can test the skill in devices like: Echo Show, Fire TV, some Fire tablets, and other devices.
 
-5. Modify the skill code to use your own music/audio URL.
+5. Modify the skill code to use your own music/audio URL
 
 **NOTE:**
 
