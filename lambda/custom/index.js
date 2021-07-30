@@ -3,11 +3,17 @@
 
 const Alexa = require('ask-sdk-core');
 const audioDocument = require('./audio.json');
+const textDocument = require('./text.json');
 const util = require('./util.js')
 
 const AUDIO_TOKEN = "AudioToken";
+const TEXT_TOKEN = "TextToken";
+
 const music = util.getS3PreSignedUrl("Media/detour(yt-music).mp3").replace(/&/g,'&amp;')
 const gabi = util.getS3PreSignedUrl("Media/Gabi.mp3").replace(/&/g,'&amp;')
+const bg = util.getS3PreSignedUrl("Media/alexaBG.png")
+const logo = util.getS3PreSignedUrl("Media/dl.png")
+
 const LaunchRequestHandler = {
     canHandle(handlerInput){
         
@@ -18,21 +24,53 @@ const LaunchRequestHandler = {
         if (Alexa.getSupportedInterfaces(handlerInput.requestEnvelope)['Alexa.Presentation.APL']){
             
             // Add the RenderDocument directive to the responseBuilder
-            responseBuilder.addDirective({
-                type: "Alexa.Presentation.APLA.RenderDocument",
-                token: AUDIO_TOKEN,
-                document: audioDocument,
-                datasources: {
-                    "user": { "name": "Sohini"},
-                    "source": music,
-                    "gabi": gabi
+            responseBuilder
+                .addDirective({
+                type: "Alexa.Presentation.APL.RenderDocument",
+                token: TEXT_TOKEN,
+                document: textDocument,
+                datasources: 
+                    {
+                        "headlineTemplateData": {
+                        "type": "object",
+                        "objectId": "headlineSample",
+                        "properties": {
+                            "backgroundImage": {
+                            "sources": [
+                            {
+                                "url": bg,
+                                "size": "large"
+                            }
+                        ]
+                    },
+                    "textContent": {
+                        "primaryText": {
+                        "type": "PlainText",
+                        "text": "Demo: Alexa Presentation Language for Audio!"
+                        }
+                    },
+                    "logoUrl": logo,
+                    "hintText": "Try, \"You can say Hello or goodbye!\""
                     }
-                });
+                }
             }
+                
+        })
+            .addDirective({
+            type: "Alexa.Presentation.APLA.RenderDocument",
+            token: AUDIO_TOKEN,
+            document: audioDocument,
+            datasources: {
+                "user": { "name": "Sohini"},
+                "source": music,
+                "gabi": gabi
+                }
+            });
+        }
         const speakOutput = "Welcome to Alexa Presentation Language for Audio Interface!";
         return responseBuilder
             .speak(speakOutput)
-            .reprompt("You can say Hello or you can say goodbye!")
+            //.reprompt("You can say Hello or you can say goodbye!")
             .getResponse();
     }
 }
