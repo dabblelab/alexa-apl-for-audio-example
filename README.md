@@ -22,7 +22,7 @@ This template is built on top of Node.js SDK. It's pretty simple, as on this dem
 
 **NOTE:**
 
-1. Make sure you format your audio files properly with SSML standard protocols & upload them to your s3 hosted skill bucket. If you are not sure about audio formatting, you can check this [here](https://github.com/dabblelab/dabble-alexa-with-sohini/blob/main/E03-alexa-skill-using-audio-files/Audio%20Formatting%20with%20Audacity.md) for Audacity. And using FFMPEG, you can do the same, check this out [here](https://github.com/dabblelab/dabble-alexa-with-sohini/blob/main/E03-alexa-skill-using-audio-files/Audio%20Formatting%20with%20FFMPEG.md) Try to name the audio files without spaces in them inorder to prevent errors. 
+1. Make sure you format your audio files properly with SSML standard protocols & upload them to your s3 hosted skill bucket. If you are not sure about audio formatting, you can check this [here](https://youtu.be/eygCATWm374) for Audacity. And using FFMPEG, you can do the same, check this out [here](https://youtu.be/B1HfR06D8gk) Try to name the audio files without spaces in them inorder to prevent errors. 
 2. I have some formatted audio files in the Assets Folder, you may use them for your reference/testing.
 
 UPDATE: Code Cleaned and multiple APL child audio components are added to the APL-A document.
