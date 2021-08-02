@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/dabblelab/alexa-apl-for-audio-template/main/Assets/APL%20for%20Audio%20Template.png)
+![](https://raw.githubusercontent.com/dabblelab/alexa-apl-for-audio-example/main/Assets/image.png)
 
 # APL for Audio Template
 
